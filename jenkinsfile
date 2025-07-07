@@ -2,22 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Code') {
+        stage('Clone GitHub Repo') {
             steps {
-                git 'https://github.com/YOUR_USERNAME/jenkins-python-pipeline-demo.git'
+                git 'https://github.com/sagar123-Sagar/jenkins_pipeline_demo.git'
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                sh 'python3 -m venv venv'
-                sh '. venv/bin/activate && pip install -r requirements.txt'
+                bat 'pip install -r requirements.txt'
             }
         }
 
-        stage('Run Script') {
+        stage('Run Python Script') {
             steps {
-                sh '. venv/bin/activate && python scripts/main.py'
+                bat 'python main.py'
             }
         }
     }
