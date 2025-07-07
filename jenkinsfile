@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Clone GitHub Repo') {
             steps {
-                git 'https://github.com/sagar123-Sagar/jenkins_pipeline_demo.git'
+                git url: 'https://github.com/sagar123-Sagar/jenkins_pipeline_demo.git', branch: 'main'
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                bat 'pip install -r requirements.txt'
+                bat 'pip install -r requirnment.txt'
             }
         }
 
