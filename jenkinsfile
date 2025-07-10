@@ -10,13 +10,13 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'pip install -r requirnment.txt'
+                bat '"C:\\Users\\Sagar\\AppData\\Local\\Programs\\Python\\Python310\\python.exe" -m pip install -r requirnment.txt'
             }
         }
 
         stage('Run Python Script') {
             steps {
-                bat 'python main.py'
+                bat '"C:\\Users\\Sagar\\AppData\\Local\\Programs\\Python\\Python310\\python.exe" main.py'
             }
         }
     }
